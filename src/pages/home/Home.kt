@@ -13,8 +13,8 @@ import react.router.dom.routeLink
 
 class Home : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
-        Fade {
-            attrs { active = true; timeout = 2000; }
+        //Fade {
+        //    attrs { active = true; timeout = 2000; }
             div {
                 h2 {
                     +"Wylie Allen"
@@ -49,7 +49,7 @@ class Home : RComponent<RProps, RState>() {
                     }
                 }
             }
-        }
+       // }
     }
 }
 

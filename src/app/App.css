@@ -32,3 +32,13 @@ body {
 a {
   text-decoration: none;
 }
+
+.fade-enter {
+  opacity: 0;
+  z-index: 2;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  z-index: 3;
+  transition: opacity 250ms ease-in;
+}

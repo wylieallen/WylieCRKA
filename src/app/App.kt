@@ -19,14 +19,28 @@ class App : RComponent<RProps, RState>() {
 
         div("content-root") {
             browserRouter {
-                switch {
-                    route("/", Home::class, exact = true)
-                    route("/about", Ticker::class, exact = true)
-                }
+                route("", render = ::renderRoutes)
             }
         }
     }
 }
+
+fun RBuilder.renderRoutes(props: RouteResultProps<RProps>) : ReactElement {
+    //return div("myDiv") {
+    return   TransitionGroup {
+            CSSTransition {
+                attrs {key = props.location.key; classNames = "fade"; timeout = 400; }
+                div {
+                    switch(props.location) {
+                        route("/", Home::class, exact = true)
+                        route("/about", Ticker::class, exact = true)
+                    }
+                }
+            }
+        }
+    //}
+}
+
 
 
 fun RBuilder.app() = child(App::class) {}

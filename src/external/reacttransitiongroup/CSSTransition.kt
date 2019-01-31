@@ -1,11 +1,11 @@
-@file:JsModule("react-transition-group/CSSTransition")
+@file:JsModule("react-transition-group")
 
 package external.reacttransitiongroup
 
 import react.RClass
 import react.RProps
 
-@JsName("default")
+@JsName("CSSTransition")
 external val CSSTransition: RClass<CSSTransitionProps>
 
 external interface CSSTransitionProps : RProps {

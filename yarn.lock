@@ -47,11 +47,6 @@
   resolved "https://registry.yarnpkg.com/@jetbrains/kotlin-react-dom/-/kotlin-react-dom-16.5.2-pre.58.tgz#c79e0dc6425a004bd8430da6af47b4c0566602c6"
   integrity sha512-KndwbevoydS4gI/RoRp8zGlvbmMmG8trh/0aOD0n0Cv2ZLKcPrie/YdF1smuCuImq7KJ+SJ8ROTw04OKiw9OhQ==
 
-"@jetbrains/kotlin-react-router-dom@^4.3.1-pre.67":
-  version "4.3.1-pre.67"
-  resolved "https://registry.yarnpkg.com/@jetbrains/kotlin-react-router-dom/-/kotlin-react-router-dom-4.3.1-pre.67.tgz#8c4f82846e03764d99bdbbd147ff74652f491a95"
-  integrity sha512-3koktE6uPFY35isTHNqcErrVNYtr1Bg9vCp2qx2nwt/eLucxXyFKXS3IAb5KIWSxn7uxhREBaw2LEByXj/5SuA==
-
 "@jetbrains/kotlin-react@^16.5.2-pre.58":
   version "16.5.2-pre.58"
   resolved "https://registry.yarnpkg.com/@jetbrains/kotlin-react/-/kotlin-react-16.5.2-pre.58.tgz#a4f8fb4c49af5ca22d688729c689cae1e4a65225"
@@ -2961,6 +2956,10 @@ kotlin-compiler@^1.3.0:
   version "1.3.20"
   resolved "https://registry.yarnpkg.com/kotlin-compiler/-/kotlin-compiler-1.3.20.tgz#2fba42c727217973db00397cb265aee9aad1a924"
   integrity sha512-0VjL0IlKzIQlbhIbUH0NUCcsAhos3tmZVIJzWvcQlUwoqqArxh0/uHpWD/l4V9Ol8JHGB/k+O24MH5uU4Fxb/g==
+
+"kotlin-wrappers@https://github.com/wylieallen/kotlin-wrappers/tarball/master":
+  version "0.0.0"
+  resolved "https://github.com/wylieallen/kotlin-wrappers/tarball/master#9ef3d9c48b3e189bc1aef37666f6eeb2a7b0e279"
 
 kotlin@^1.3.0:
   version "1.3.20"
