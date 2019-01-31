@@ -1,7 +1,9 @@
 package ticker
 
+import external.materialui.Button
 import react.*
 import react.dom.*
+import react.router.dom.routeLink
 import kotlin.browser.*
 
 interface TickerProps : RProps {
@@ -32,6 +34,12 @@ class Ticker(props: TickerProps) : RComponent<TickerProps, TickerState>(props) {
 
     override fun RBuilder.render() {
         +"This app has been running for ${state.secondsElapsed} seconds."
+        routeLink(to = "/"){
+            Button {
+                attrs { color = "default"; variant = "contained"; }
+                +"Home"
+            }
+        }
     }
 }
 

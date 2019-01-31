@@ -10,41 +10,71 @@ import display.displayables.decorators.TranslatedDisplayable
 import display.displayables.primitives.SolidRect
 import display.tickables.Tickable
 import display.tickables.composites.CompositeTickable
+import org.w3c.dom.events.Event
 import react.*
 import kotlin.browser.window
 import kotlin.random.Random
 
 interface StarfieldProps : RProps {
-    var width: Int
-    var height: Int
     var stars: Int
 }
 
-class Starfield(props: StarfieldProps) : RComponent<StarfieldProps, RState>(props) {
+interface StarfieldState : RState {
+    var width: Int
+    var height: Int
+    var repopulateNext: Boolean
+}
+
+class Starfield(props: StarfieldProps) : RComponent<StarfieldProps, StarfieldState>(props) {
     private val displayables = CompositeDisplayable()
     private val tickables = CompositeTickable()
     private val canvas = createRef<DisplayCanvas>()
 
     init {
-        displayables.add(SolidRect(props.width.toDouble(), props.height.toDouble(), Color.BLACK))
+        state.width = window.innerWidth
+        state.height = window.innerHeight
 
-        for(i in 1..props.stars) {
-            val star = Star(Random.nextDouble() * props.width, Random.nextDouble() * props.height, Random.nextInt(3).toDouble() + 1, Color.random())
-            displayables.add(star)
-            tickables.add(star)
-        }
+        populateStars()
 
-        // todo: add resize event listener
+        window.addEventListener("resize", this::resize)
 
         tick(window.performance.now())
     }
 
     override fun componentWillUnmount() {
-        // todo: remove event listeners
+        window.removeEventListener("resize", this::resize)
+    }
+
+    fun resize(e: Event) {
+        setState { width = window.innerWidth; height = window.innerHeight; repopulateNext = true; }
+    }
+
+    private fun populateStars() {
+        displayables.clear()
+        tickables.clear()
+
+        displayables.add(SolidRect(state.width.toDouble(), state.height.toDouble(), Color.BLACK))
+
+        val layers = 3
+        val starsPerLayer = props.stars / layers
+
+        for(i in 1..layers) {
+            val topLayer = StarLayer(0.0, -state.height.toDouble(), i, starsPerLayer)
+            val bottomLayer = StarLayer(0.0, 0.0, i, starsPerLayer)
+            displayables.add(topLayer)
+            displayables.add(bottomLayer)
+            tickables.add(topLayer)
+            tickables.add(bottomLayer)
+        }
+
     }
 
     override fun RBuilder.render() {
-        displayCanvas(props.width, props.height, "starfield-canvas", displayables, canvas)
+        if(state.repopulateNext) {
+            setState { repopulateNext = false }
+            populateStars()
+        }
+        displayCanvas(state.width, state.height, "starfield-canvas", displayables, canvas)
     }
 
     fun tick(timestamp: Double) {
@@ -53,25 +83,39 @@ class Starfield(props: StarfieldProps) : RComponent<StarfieldProps, RState>(prop
         window.requestAnimationFrame(this::tick)
     }
 
-    private fun update() = tickables.tick()
+    private fun update() { this.tickables.tick() }
     private fun repaint() { canvas.current?.paint() }
 
-    private inner class Star(x: Double, var y: Double, val dy: Double, color: Color) : Displayable, Tickable {
-        private val displayable = TranslatedDisplayable(x, y, SolidRect(1.0, 1.0, color))
+    private inner class StarLayer(x: Double, y: Double, private val dy: Int, starCount: Int) : Displayable, Tickable {
+        private val displayable: TranslatedDisplayable
 
-        override fun display(painter: Painter) = displayable.display(painter)
-        override fun tick() {
-            this.y += dy
-            if(this.y > props.height) {
-                this.y = 0.0
+        init {
+            val composite = CompositeDisplayable()
+            displayable = TranslatedDisplayable(x, y, composite)
+
+            val size = 1.0 + Random.nextInt(3)
+            for(i in 1..starCount) {
+                composite.add(makeStar(size))
             }
-            displayable.y = y
+        }
+
+        override fun display(p: Painter) = displayable.display(p)
+
+        override fun tick() {
+            displayable.y += dy
+            if(displayable.y >= state.height) {
+                displayable.y = -state.height.toDouble()
+            }
+        }
+
+        private fun makeStar(size: Double) : Displayable {
+            return TranslatedDisplayable(Random.nextInt(state.width).toDouble(), Random.nextInt(state.height).toDouble(),
+                    SolidRect(size, size, Color(Random.nextInt(0xFF), Random.nextInt(0xFF), Random.nextInt(0xFF)))
+            )
         }
     }
 }
 
-fun RBuilder.starfield(width: Int, height: Int, stars: Int) = child(Starfield::class) {
-    attrs.width = width
-    attrs.height = height
+fun RBuilder.starfield(stars: Int) = child(Starfield::class) {
     attrs.stars = stars
 }

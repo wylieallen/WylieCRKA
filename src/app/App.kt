@@ -1,37 +1,32 @@
 package app
 
-import external.materialui.Typography
+import external.materialui.Fade
+import external.reacttransitiongroup.CSSTransition
+import external.reacttransitiongroup.TransitionGroup
+import pages.home.Home
 import react.*
 import react.dom.*
-import logo.*
+import react.router.dom.RouteResultProps
+import react.router.dom.browserRouter
+import react.router.dom.route
+import react.router.dom.switch
 import starfield.starfield
-import ticker.*
-import kotlin.browser.window
+import ticker.Ticker
 
 class App : RComponent<RProps, RState>() {
-
     override fun RBuilder.render() {
-        div("App-header") {
-            logo()
-            h2 {
-                +"Welcome to React with Kotlin"
-            }
-        }
-        p("App-intro") {
-            +"To get started, edit "
-            code { +"app/App.kt" }
-            +" and save to reload."
-        }
-        starfield(window.innerWidth, window.innerHeight, 200)
+        starfield(200)
 
-        p("App-ticker") {
-            ticker()
-        }
-        Typography {
-            attrs { variant = "h4"; align = "center"; color = "textPrimary"; paragraph = true; }
-            +"Yep"
+        div("content-root") {
+            browserRouter {
+                switch {
+                    route("/", Home::class, exact = true)
+                    route("/about", Ticker::class, exact = true)
+                }
+            }
         }
     }
 }
+
 
 fun RBuilder.app() = child(App::class) {}

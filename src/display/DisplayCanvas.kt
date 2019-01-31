@@ -14,6 +14,7 @@ interface DisplayCanvasProps : RProps {
     var displayable: Displayable
 }
 
+
 class DisplayCanvas(props: DisplayCanvasProps) : RComponent<DisplayCanvasProps, RState>(props) {
     private val canvas: RReadableRef<HTMLCanvasElement> = createRef()
     private val root = props.displayable

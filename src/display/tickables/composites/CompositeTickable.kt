@@ -17,4 +17,6 @@ class CompositeTickable(vararg children: Tickable) : Tickable {
         }
         children.forEach(Tickable::tick)
     }
+
+    fun clear() = children.clear()
 }

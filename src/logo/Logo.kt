@@ -2,8 +2,6 @@ package logo
 
 import react.*
 import react.dom.*
-import kotlinext.js.*
-import kotlinx.html.style
 
 @JsModule("src/logo/react.svg")
 external val reactLogo: dynamic

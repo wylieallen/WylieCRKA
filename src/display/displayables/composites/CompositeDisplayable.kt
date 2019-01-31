@@ -13,4 +13,5 @@ class CompositeDisplayable(vararg children: Displayable) : AbstractDisplayable()
 
     fun add(displayable: Displayable) = children.add(displayable)
     fun remove(displayable: Displayable) = children.remove(displayable)
+    fun clear() = children.clear()
 }
