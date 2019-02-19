@@ -1,0 +1,19 @@
+.skills-tile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+}
+
+.skills-tile h5 {
+    margin-right: 8px;
+    width: 45%;
+    text-align: right;
+}
+
+.skills-tile p {
+    text-align: left;
+    width: 55%;
+    padding-left: 2%;
+}

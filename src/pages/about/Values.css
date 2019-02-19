@@ -1,0 +1,43 @@
+.value-pillars {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.value-pillar {
+    width: calc(33% - 24px);
+    max-width: 400px;
+    flex-direction: column;
+    display: flex !important;
+    margin: 12px;
+}
+
+.value-pillar-icon {
+    margin-bottom: 22px;
+}
+
+.about-mobile-slider {
+    display: none;
+}
+
+.about-values {
+    overflow-y: hidden;
+}
+
+@media only screen and (max-width: 760px) {
+    .value-pillars {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .value-pillar {
+        width: unset !important;
+        max-width: unset;
+    }
+
+    .about-mobile-slider {
+        display: unset;
+    }
+}

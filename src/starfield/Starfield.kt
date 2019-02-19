@@ -33,8 +33,7 @@ class Starfield(props: StarfieldProps) : RComponent<StarfieldProps, StarfieldSta
     init {
         state.width = window.innerWidth
         state.height = window.innerHeight
-
-        populateStars()
+        state.repopulateNext = true;
 
         window.addEventListener("resize", this::resize)
 
@@ -99,7 +98,7 @@ class Starfield(props: StarfieldProps) : RComponent<StarfieldProps, StarfieldSta
             }
         }
 
-        override fun display(p: Painter) = displayable.display(p)
+        override fun display(painter: Painter) = displayable.display(painter)
 
         override fun tick() {
             displayable.y += dy

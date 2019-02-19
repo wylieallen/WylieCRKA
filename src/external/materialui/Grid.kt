@@ -13,5 +13,7 @@ external interface GridProps : RProps{
     var justify: String
     var container: Boolean
     var item: Boolean
+    var direction: String
+    var alignItems: String
     var id: String
 }

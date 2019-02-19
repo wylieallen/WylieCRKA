@@ -33,11 +33,13 @@ class Ticker(props: TickerProps) : RComponent<TickerProps, TickerState>(props) {
     }
 
     override fun RBuilder.render() {
-        +"This app has been running for ${state.secondsElapsed} seconds."
-        routeLink(to = "/"){
-            Button {
-                attrs { color = "default"; variant = "contained"; }
-                +"Home"
+        div("page") {
+            +"This app has been running for ${state.secondsElapsed} seconds."
+            routeLink(to = "/"){
+                Button {
+                    attrs { color = "default"; variant = "contained"; }
+                    +"Home"
+                }
             }
         }
     }
