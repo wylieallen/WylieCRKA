@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
+    margin-top: 20px;
 }
 
 .value-pillar {
@@ -39,5 +40,9 @@
 
     .about-mobile-slider {
         display: unset;
+    }
+
+    .slick-slider {
+        margin-top: 50px;
     }
 }

@@ -16,4 +16,9 @@
     text-align: left;
     width: 55%;
     padding-left: 2%;
+    margin-right: 16px;
+}
+
+.about-skills {
+    margin-bottom: 20px;
 }
