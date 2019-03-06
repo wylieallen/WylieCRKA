@@ -6,5 +6,8 @@ import react.RClass
 import react.RProps
 
 @JsName("default")
-external val CardContent: RClass<RProps>
+external val CardContent: RClass<CardContentProps>
 
+external interface CardContentProps : RProps {
+    var className: String
+}

@@ -11,4 +11,5 @@ external val ExpansionPanelSummary: RClass<ExpansionPanelSummaryProps>
 
 external interface ExpansionPanelSummaryProps : RProps {
     var expandIcon: ReactElement
+    var className: String
 }

@@ -1,24 +1,24 @@
-.history-grid div[class^="MuiPaper"]{
+.history-grid .history-panel{
     color: white;
     background-color: rgba(0.11, 0.11, 0.11, 0.65);
     border: solid 1px white;
 }
 
-.history-grid span[class^="MuiIconButton"]{
+.history-grid span{
     color: white;
 }
 
-.history-grid div[class^="MuiExpansionPanelSummary"] svg[class^="MuiSvgIcon"]{
+.history-grid .history-panel-summary > div > svg {
     display: none;
 }
 
-.history-grid div[class^="MuiExpansionPanelDetails"]{
+.history-grid .history-panel-details {
     text-align: left;
     display: flex;
     flex-direction: column;
 }
 
-.history-grid div[class^="MuiGrid-item-2 MuiGrid-grid-xs-3-32"] {
+.history-grid .history-icon-wrapper {
     display: flex;
     align-items: center;
 }

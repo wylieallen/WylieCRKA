@@ -70,13 +70,13 @@ class History : RComponent<HistoryProps, HistoryState>() {
 
     private fun RBuilder.historyPanel(icon: String, panelId: String, summary: String, details: Array<String>) {
         ExpansionPanel {
-            attrs { expanded = (props.active && state.openPanel === panelId); onChange = makeExpansionHandler(panelId) }
+            attrs { expanded = (props.active && state.openPanel === panelId); onChange = makeExpansionHandler(panelId); className = "history-panel" }
             ExpansionPanelSummary {
-                attrs { expandIcon = ExpandMore{} }
+                attrs { expandIcon = ExpandMore{}; className = "history-panel-summary" }
                 Grid {
                     attrs { container = true; spacing = 8; }
                     Grid {
-                        attrs { item = true; xs = 3; sm = 2; md = 1; }
+                        attrs { item = true; xs = 3; sm = 2; md = 1; className = "history-icon-wrapper"; }
                         div("history-icon fas fa-3x $icon") {}
                     }
                     Grid {
@@ -86,6 +86,7 @@ class History : RComponent<HistoryProps, HistoryState>() {
                 }
             }
             ExpansionPanelDetails {
+                attrs { className = "history-panel-details" }
                 details.forEach {
                     p{+it}
                 }

@@ -11,4 +11,5 @@ external val ExpansionPanel: RClass<ExpansionPanelProps>
 external interface ExpansionPanelProps : RProps {
     var expanded: Boolean
     var onChange: (event: dynamic, expanded: Boolean) -> Unit
+    var className: String
 }

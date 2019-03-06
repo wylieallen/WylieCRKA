@@ -94,7 +94,9 @@ class Skills : RComponent<RProps, SkillsState>() {
 
     private fun RBuilder.skillCard(summary: String, details: Array<String>) {
         Card {
+            attrs { className = "skill-card" }
             CardContent {
+                attrs { className = "skill-card-content" }
                 h3 {
                     +summary
                 }
