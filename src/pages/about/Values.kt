@@ -12,10 +12,6 @@ class Values : RComponent<RProps, RState>() {
 
     override fun RBuilder.render() {
         div("about-values") {
-            h4 {
-                +"How I Work"
-            }
-
             div("about-mobile-slider") {
                 Slider {
                     attrs { centerMode = true; ref = slider; afterChange = { _, after -> currentSlideIndex = after; }; initialSlide = currentSlideIndex; arrows = false; }

@@ -16,4 +16,9 @@ external interface GridProps : RProps{
     var direction: String
     var alignItems: String
     var id: String
+    var xs: Int
+    var sm: Int
+    var md: Int
+    var lg: Int
+    var xl: Int
 }

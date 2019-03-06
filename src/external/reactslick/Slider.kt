@@ -18,4 +18,7 @@ external interface SliderProps : RProps {
     var afterChange: (beforeIndex: Int, afterIndex: Int) -> Unit
     var initialSlide: Int
     var arrows: Boolean
+    var slidesToShow: Int
+    var dots: Boolean
+    var infinite: Boolean
 }

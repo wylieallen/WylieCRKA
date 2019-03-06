@@ -13,5 +13,6 @@ external interface SwipeableViewsProps : RProps {
     var index: Int
     var onChangeIndex: (Int) -> Unit
     var disabled: Boolean
+    var slideClassName: String
 }
 

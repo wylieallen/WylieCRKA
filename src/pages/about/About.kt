@@ -32,7 +32,7 @@ class About : RComponent<RProps, AboutState>() {
                     Grid {
                         attrs { item = true; }
                         h2 {
-                            +"About Me"
+                            +"About Wylie"
                         }
                     }
                 }
@@ -46,9 +46,9 @@ class About : RComponent<RProps, AboutState>() {
                             variant = "fullWidth"
 //                            centered = true
                         }
-                        Tab { attrs { label = "Values" } }
-                        Tab { attrs { label = "Skills" } }
-                        Tab { attrs { label = "Stories" } }
+                        Tab { attrs { label = "My Values" } }
+                        Tab { attrs { label = "My Skills" } }
+                        Tab { attrs { label = "My Story" } }
                     }
                 }
 
@@ -57,13 +57,14 @@ class About : RComponent<RProps, AboutState>() {
                         axis = "x"
                         index = state.tabIndex
                         disabled = true
+                        slideClassName = "about-slide"
                     }
 
                     values()
 
                     skills()
 
-                    history()
+                    history(state.tabIndex == 2)
                 }
                 routeLink(to = "/") {
                     Button {

@@ -4,6 +4,12 @@
     margin: 12px;
 }
 
+.about-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*.slick-list {*/
     /*overflow: unset;*/
 /*}*/

@@ -1,0 +1,28 @@
+.history-grid div[class^="MuiPaper"]{
+    color: white;
+    background-color: rgba(0.11, 0.11, 0.11, 0.65);
+    border: solid 1px white;
+}
+
+.history-grid span[class^="MuiIconButton"]{
+    color: white;
+}
+
+.history-grid div[class^="MuiExpansionPanelSummary"] svg[class^="MuiSvgIcon"]{
+    display: none;
+}
+
+.history-grid div[class^="MuiExpansionPanelDetails"]{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-grid div[class^="MuiGrid-item-2 MuiGrid-grid-xs-3-32"] {
+    display: flex;
+    align-items: center;
+}
+
+.history-grid {
+    margin: 8px 0 8px 0;
+}
