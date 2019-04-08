@@ -10,5 +10,6 @@ external val GridList: RClass<GridListProps>
 
 external interface GridListProps : RProps {
     var cellHeight: Int
+    var cols: Int
 }
 

@@ -16,6 +16,13 @@
     text-align: left;
     display: flex;
     flex-direction: column;
+    padding-bottom: 12px;
+    padding-top: 0;
+}
+
+.history-grid .history-panel-details p {
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .history-grid .history-icon-wrapper {

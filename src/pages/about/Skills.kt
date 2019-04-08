@@ -4,8 +4,10 @@ import external.materialui.*
 import external.materialui.icons.ExpandMore
 import external.reactslick.Slick
 import external.reactslick.Slider
+import org.w3c.dom.events.Event
 import react.*
 import react.dom.*
+import kotlin.browser.window
 
 class Skills : RComponent<RProps, SkillsState>() {
     private val slider = createRef<Slick>()
@@ -41,7 +43,7 @@ class Skills : RComponent<RProps, SkillsState>() {
                 Grid {
                     attrs { container = true; alignItems = "center"; justify = "center"; }
                     Grid {
-                        attrs { item = true; container = true; xs = 11; md = 8; alignItems = "center"; justify = "center"; }
+                        attrs { item = true; container = true; xs = 11; md = 8; alignItems = "center"; justify = "center"; spacing = 16; }
                         Grid {
                             attrs { item = true; xs = 6; md = 6; }
                             languagesCard()
@@ -52,11 +54,11 @@ class Skills : RComponent<RProps, SkillsState>() {
                         }
                         Grid {
                             attrs { item = true; xs = 6; md = 6; }
-                            toolsCard()
+                            processesCard()
                         }
                         Grid {
                             attrs { item = true; xs = 6; md = 6; }
-                            processesCard()
+                            toolsCard()
                         }
                     }
                 }
@@ -74,14 +76,14 @@ class Skills : RComponent<RProps, SkillsState>() {
     private fun RBuilder.librariesCard() {
         skillCard(
                 summary = "Libraries and Frameworks",
-                details = arrayOf("React, Spring", "JUnit, Selenium, Jest, Enzyme", "OpenGL, JOGL")
+                details = arrayOf("React, Spring", "JUnit, Selenium, Jest", "Java2D, OpenGL, JOGL")
         )
     }
 
     private fun RBuilder.toolsCard() {
         skillCard(
                 summary = "Tools",
-                details = arrayOf("IntelliJ, Git, npm", "Postgres, Wordpress", "Jira, Confluence")
+                details = arrayOf("IntelliJ, Git, npm", "Postgres, Redis", "Jira, Confluence, Wordpress")
         )
     }
 

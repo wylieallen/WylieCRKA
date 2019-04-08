@@ -24,7 +24,7 @@ class History : RComponent<HistoryProps, HistoryState>() {
             Grid {
                 attrs { container = true; alignItems = "center"; justify = "center"; }
                 Grid {
-                    attrs { item = true; xs = 12; sm = 11; md = 9; lg = 6; xl = 5; container = true; spacing = 8; alignItems = "center"; justify = "center"; }
+                    attrs { item = true; xs = 11; sm = 10; md = 6; lg = 4; xl = 3; container = true; spacing = 8; alignItems = "center"; justify = "center"; }
                     Grid {
                         attrs { item = true; xs = 12; }
                         historyPanel(
@@ -32,9 +32,9 @@ class History : RComponent<HistoryProps, HistoryState>() {
                                 panelId = "early",
                                 summary = "THE EARLY YEARS",
                                 details = arrayOf(
-                                        "I was born in San Francisco in the '90s. My parents were personal computing hobbyists who gave me a lot of early exposure to computers starting with games on our DOS IBM.",
-                                        "My dad's job kept us moving around a lot until we eventually settled down in my mom's hometown of Tampa, Florida.",
-                                        "I began exploring programming while growing up through after-school web design courses, Flash animation and game modding."
+                                        "I was born in San Francisco in the '90s. My earliest exposure to computers came while playing games with my parents on our DOS PC.",
+                                        "Growing up I continued exploring computing concepts through after-school web design courses, Flash animation and game modding. Software engineering seemed like a natural fit, but inconsistent math grades discouraged me and I gravitated away from a future in tech.",
+                                        "One semester I took a programming class on a lark and fell in love. Succeeding in that class gave me the confidence I needed to power through those once-intimidating math and science prerequisites, and in 2016 I transferred into the University of Florida's Computer Science program."
                                 )
                         )
                     }
@@ -45,9 +45,10 @@ class History : RComponent<HistoryProps, HistoryState>() {
                                 panelId = "uf",
                                 summary = "UNIVERSITY OF FLORIDA",
                                 details = arrayOf(
-                                        "I moved to Gainesville to attend UF and graduated with a B.S. in Computer Science in May 2018. My technical electives included OOP, Design Patterns, UX Design, AI and Heuristics, and Multimedia Production.",
-                                        "I worked in teams on larger-scale software systems, which inspired me to think about what makes a great software engineer beyond mastery of syntax.",
-                                        "Many of my personal projects, like Wylaga, Taluvo and DisplayKT, can trace their origins back to UF class material and coursework."
+                                        "I discovered a universe of possibility at UF.",
+                                        "At first I felt overwhelmed by how much I would need to learn if I wanted to rise to the level of my most accomplished classmates, so I spent time honing my skills with increasingly complex personal projects.",
+                                        "I took intensive courses on object-oriented design, UX analysis, graphics programming and software engineering, giving me a strong foundation for designing and developing large systems.",
+                                        "My experiences at UF inspired me to reflect on how I could be a productive coder and an effective, collaborative designer. I graduated with a B.S. in Computer Science and a minor in Mathematics in 2018."
                                 )
                         )
                     }
@@ -58,8 +59,9 @@ class History : RComponent<HistoryProps, HistoryState>() {
                                 panelId = "masonite",
                                 summary = "MASONITE INTERNATIONAL",
                                 details = arrayOf(
-                                        "Since August 2018 I've been at Masonite's Ybor City office working on Advisar, a sales and ordering tool for custom-configured Masonite doors.",
-                                        "I work on an Agile team that supports Advisar's suite of web applications by completing stories across a stack that includes React UIs and Spring-based microservices."
+                                        "Since August 2018 I've been at Masonite's Ybor City office working on Advisar, an internal startup offering a sales and ordering tool for custom-configured Masonite doors.",
+                                        "Our Agile development team supports Advisar by designing and implementing features across our stack, from RESTful APIs built on event-driven Spring microservices to single-page React applications that consume those services.",
+                                        "I participate in iteration planning meetings, daily stand-ups and weekly retrospectives. Every day I analyze requirements, write stories, and pair program with members of my team to implement features, fix bugs and research new technologies."
                                 )
                         )
                     }

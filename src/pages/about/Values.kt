@@ -14,20 +14,24 @@ class Values : RComponent<RProps, RState>() {
         div("about-values") {
             div("about-mobile-slider") {
                 Slider {
-                    attrs { centerMode = true; ref = slider; afterChange = { _, after -> currentSlideIndex = after; }; initialSlide = currentSlideIndex; arrows = false; }
+                    attrs { centerMode = true; ref = slider; afterChange = { _, after -> currentSlideIndex = after; }; initialSlide = currentSlideIndex; arrows = false; dots = true; }
                     valuePillars()
                 }
             }
 
             Grid {
-                attrs { container = true; justify = "center"; direction = "column"; alignItems = "center"; }
+                attrs { container = true; justify = "center"; alignItems = "center"}
                 Grid {
-                    attrs { item = true; }
-                    div("value-pillars") {
-                        valuePillars()
+                    attrs { item = true; xs = 11; container = true; justify = "center"; direction = "column"; alignItems = "center"; }
+                    Grid {
+                        attrs { item = true; }
+                        div("value-pillars") {
+                            valuePillars()
+                        }
                     }
                 }
             }
+
         }
     }
 
@@ -55,7 +59,7 @@ class Values : RComponent<RProps, RState>() {
                 title = "Quality Code",
                 tagline = "I'm playing the long game.",
                 icon = "fa-code",
-                content = "That means writing straightforward, reliable and extensible code so today's solution doesn't become tomorrow's problem."
+                content = "That means writing straightforward, reliable and extensible code so today's solution won't become tomorrow's problem."
         )
 
         valuePillar(

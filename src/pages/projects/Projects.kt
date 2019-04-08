@@ -1,14 +1,18 @@
 package pages.projects
 
-import external.materialui.Button
+import external.materialui.*
+import external.materialui.icons.Info
 import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
-import react.dom.div
-import react.dom.h2
-import react.dom.p
+import react.dom.*
 import react.router.dom.routeLink
+import kotlin.browser.window
+
+@JsModule("src/pages/projects/project.png")
+external val projectImage: dynamic
+
 
 class Projects : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
@@ -17,29 +21,48 @@ class Projects : RComponent<RProps, RState>() {
                 h2 {
                     +"Wylie's Projects"
                 }
-                p {
-                    +"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                }
-                p {
-                    +"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                }
-                p {
-                    +"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                }
-                p {
-                    +"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                }
-                p {
-                    +"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                }
-                p {
-                    +"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                }
-                p {
-                    +"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                }
-                p {
-                    +"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                Grid {
+                    attrs { container = true; justify = "center"; }
+                    Grid {
+                        attrs { item = true; xs = 11; sm = 9; md = 8; lg = 7; xl = 6; spacing = 40;}
+                        GridList{
+                            attrs { cellHeight = 200; cols = 3; }
+                            GridListTile {
+                                attrs { cols = 1; }
+                                img(src = projectImage, alt = "Project"){}
+                                GridListTileBar {
+                                    attrs {
+                                        title = "Wylaga"
+                                        subtitle = span{+"A Galaga-inspired 2D space shooter"}
+                                        actionIcon = IconButton{
+                                            attrs { onClick = {println("Click")} }
+                                            Info{}
+                                        }
+                                    }
+                                }
+                            }
+                            GridListTile {
+                                attrs { cols = 1; }
+                                img(src = projectImage, alt = "Project"){}
+                            }
+                            GridListTile {
+                                attrs { cols = 1; }
+                                img(src = projectImage, alt = "Project"){}
+                            }
+                            GridListTile {
+                                attrs { cols = 1; }
+                                img(src = projectImage, alt = "Project"){}
+                            }
+                            GridListTile {
+                                attrs { cols = 1; }
+                                img(src = projectImage, alt = "Project"){}
+                            }
+                            GridListTile {
+                                attrs { cols = 1; }
+                                img(src = projectImage, alt = "Project"){}
+                            }
+                        }
+                    }
                 }
                 routeLink(to = "/"){
                     Button {

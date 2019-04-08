@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
-    margin-top: 20px;
 }
 
 .value-pillar {
@@ -12,10 +11,20 @@
     flex-direction: column;
     display: flex !important;
     margin: 12px;
+    padding: 12px;
 }
 
 .value-pillar-icon {
     margin-bottom: 22px;
+}
+
+.value-pillar-content {
+    max-width: 300px;
+    align-self: center;
+}
+
+.value-pillar-title {
+    font-size: 25px;
 }
 
 .about-mobile-slider {
@@ -26,7 +35,7 @@
     overflow-y: hidden;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 850px) {
     .value-pillars {
         flex-direction: column;
         align-items: center;
@@ -36,9 +45,18 @@
     .value-pillar {
         width: unset !important;
         max-width: unset;
+        border: 1px white solid;
+        border-radius: 4px;
+        background-color: rgba(0.11, 0.11, 0.11, 0.65);
     }
 
     .about-mobile-slider {
         display: unset;
+    }
+
+    .about-values {
+        margin-left: 4px;
+        margin-right: 4px;
+        border: 2px solid white;
     }
 }
