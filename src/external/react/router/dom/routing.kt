@@ -1,6 +1,6 @@
 @file:JsModule("react-router-dom")
 
-package react.router.dom
+package external.react.router.dom
 
 import react.*
 

@@ -1,10 +1,10 @@
 {
-  "short_name": "React Kotlin App",
-  "name": "Create React Kotlin App Sample",
+  "short_name": "wylieallen.dev",
+  "name": "Wylie Allen: Full-Stack Engineer",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "192x192",
+      "src": "favicon.png",
+      "sizes": "16x16",
       "type": "image/png"
     }
   ],

@@ -8,11 +8,13 @@ import pages.home.Home
 import pages.projects.Projects
 import react.*
 import react.dom.*
-import react.router.dom.RouteResultProps
-import react.router.dom.browserRouter
-import react.router.dom.route
-import react.router.dom.switch
+import external.react.router.dom.RouteResultProps
+import external.react.router.dom.browserRouter
+import external.react.router.dom.route
+import external.react.router.dom.switch
+import kotlinext.js.requireAll
 import starfield.starfield
+import kotlin.browser.document
 
 class App : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
@@ -44,3 +46,11 @@ private fun RBuilder.routes(props: RouteResultProps<RProps>) : ReactElement {
 }
 
 fun RBuilder.app() = child(App::class) {}
+
+fun main() {
+    requireAll(kotlinext.js.require.context("src", true, js("/\\.css$/")))
+
+    render(document.getElementById("root")) {
+        app()
+    }
+}

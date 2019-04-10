@@ -69,7 +69,7 @@ class Skills : RComponent<RProps, SkillsState>() {
     private fun RBuilder.languagesCard() {
         skillCard(
                 summary = "Languages",
-                details = arrayOf("Java, Javascript, Kotlin", "HTML, CSS, SQL", "PHP, Python, C, C++")
+                details = arrayOf("Java, JavaScript, Kotlin", "HTML, CSS, SQL", "PHP, Python, C, C++")
         )
     }
 
@@ -83,7 +83,7 @@ class Skills : RComponent<RProps, SkillsState>() {
     private fun RBuilder.toolsCard() {
         skillCard(
                 summary = "Tools",
-                details = arrayOf("IntelliJ, Git, npm", "Postgres, Redis", "Jira, Confluence, Wordpress")
+                details = arrayOf("IntelliJ IDEA, Git, npm", "Postgres, Hibernate, Redis", "Jira, Confluence, Wordpress")
         )
     }
 

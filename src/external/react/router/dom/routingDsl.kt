@@ -1,4 +1,4 @@
-package react.router.dom
+package external.react.router.dom
 
 import react.*
 import kotlin.reflect.KClass

@@ -7,7 +7,7 @@ import external.materialui.Tabs
 import external.reactswipeableviews.SwipeableViews
 import react.*
 import react.dom.*
-import react.router.dom.routeLink
+import external.react.router.dom.routeLink
 
 interface AboutState : RState {
     var tabIndex: Int
@@ -32,7 +32,7 @@ class About : RComponent<RProps, AboutState>() {
                     Grid {
                         attrs { item = true; }
                         h2 {
-                            +"About Wylie"
+                            +"About Me"
                         }
                     }
                 }
@@ -46,9 +46,9 @@ class About : RComponent<RProps, AboutState>() {
                             variant = "fullWidth"
 //                            centered = true
                         }
-                        Tab { attrs { label = "My Values" } }
-                        Tab { attrs { label = "My Skills" } }
-                        Tab { attrs { label = "My Story" } }
+                        Tab { attrs { label = "Values" } }
+                        Tab { attrs { label = "Skills" } }
+                        Tab { attrs { label = "Stories" } }
                     }
                 }
 
@@ -66,10 +66,12 @@ class About : RComponent<RProps, AboutState>() {
 
                     history(state.tabIndex == 2)
                 }
-                routeLink(to = "/") {
-                    Button {
-                        attrs { color = "default"; variant = "contained"; }
-                        +"Home"
+                div("about-nav") {
+                    routeLink(to = "/") {
+                        Button {
+                            attrs { color = "default"; variant = "contained"; }
+                            +"Home"
+                        }
                     }
                 }
             }

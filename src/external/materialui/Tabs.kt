@@ -9,7 +9,7 @@ import react.RProps
 external val Tabs: RClass<TabsProps>
 
 external interface TabsProps : RProps {
-    var value: Int
+    var value: dynamic
     var onChange: (Any, Int) -> Unit
     var indicatorColor: String
     var textColor: String

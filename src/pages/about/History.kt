@@ -8,12 +8,16 @@ import external.materialui.icons.ExpandMore
 import react.*
 import react.dom.*
 
+enum class PanelId {
+    EARLY, UF, MASONITE
+}
+
 class History : RComponent<HistoryProps, HistoryState>() {
     init {
-        state.openPanel = "early"
+        state.openPanel = PanelId.EARLY
     }
 
-    private fun makeExpansionHandler(panelId: String): (dynamic, Boolean) -> Unit {
+    private fun makeExpansionHandler(panelId: PanelId): (dynamic, Boolean) -> Unit {
         return fun(_, _) {
             setState { openPanel = panelId }
         }
@@ -29,11 +33,11 @@ class History : RComponent<HistoryProps, HistoryState>() {
                         attrs { item = true; xs = 12; }
                         historyPanel(
                                 icon = "fa-baby",
-                                panelId = "early",
+                                panelId = PanelId.EARLY,
                                 summary = "THE EARLY YEARS",
                                 details = arrayOf(
                                         "I was born in San Francisco in the '90s. My earliest exposure to computers came while playing games with my parents on our DOS PC.",
-                                        "Growing up I continued exploring computing concepts through after-school web design courses, Flash animation and game modding. Software engineering seemed like a natural fit, but inconsistent math grades discouraged me and I gravitated away from a future in tech.",
+                                        "I continued to explore computing concepts through after-school web design courses, Flash animation and game modding. Software engineering seemed like a natural fit, but inconsistent math grades discouraged me and I gravitated away from a future in tech.",
                                         "One semester I took a programming class on a lark and fell in love. Succeeding in that class gave me the confidence I needed to power through those once-intimidating math and science prerequisites, and in 2016 I transferred into the University of Florida's Computer Science program."
                                 )
                         )
@@ -42,7 +46,7 @@ class History : RComponent<HistoryProps, HistoryState>() {
                         attrs { item = true; xs = 12; }
                         historyPanel(
                                 icon = "fa-graduation-cap",
-                                panelId = "uf",
+                                panelId = PanelId.UF,
                                 summary = "UNIVERSITY OF FLORIDA",
                                 details = arrayOf(
                                         "I discovered a universe of possibility at UF.",
@@ -56,7 +60,7 @@ class History : RComponent<HistoryProps, HistoryState>() {
                         attrs { item = true; xs = 12; }
                         historyPanel(
                                 icon = "fa-door-open",
-                                panelId = "masonite",
+                                panelId = PanelId.MASONITE,
                                 summary = "MASONITE INTERNATIONAL",
                                 details = arrayOf(
                                         "Since August 2018 I've been at Masonite's Ybor City office working on Advisar, an internal startup offering a sales and ordering tool for custom-configured Masonite doors.",
@@ -70,7 +74,7 @@ class History : RComponent<HistoryProps, HistoryState>() {
         }
     }
 
-    private fun RBuilder.historyPanel(icon: String, panelId: String, summary: String, details: Array<String>) {
+    private fun RBuilder.historyPanel(icon: String, panelId: PanelId, summary: String, details: Array<String>) {
         ExpansionPanel {
             attrs { expanded = (props.active && state.openPanel === panelId); onChange = makeExpansionHandler(panelId); className = "history-panel" }
             ExpansionPanelSummary {
@@ -102,7 +106,7 @@ interface HistoryProps : RProps {
 }
 
 interface HistoryState : RState {
-    var openPanel: String
+    var openPanel: PanelId
 }
 
 fun RBuilder.history(isActive: Boolean) = child(History::class) {attrs {active = isActive}}

@@ -7,8 +7,7 @@ import react.RComponent
 import react.RProps
 import react.RState
 import react.dom.*
-import react.router.dom.routeLink
-import kotlin.browser.window
+import external.react.router.dom.routeLink
 
 @JsModule("src/pages/projects/project.png")
 external val projectImage: dynamic
@@ -19,7 +18,7 @@ class Projects : RComponent<RProps, RState>() {
         div("page") {
             div("page-content") {
                 h2 {
-                    +"Wylie's Projects"
+                    +"My Projects"
                 }
                 Grid {
                     attrs { container = true; justify = "center"; }

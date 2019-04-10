@@ -3,13 +3,13 @@ package pages.home
 import external.materialui.Button
 import external.materialui.Fade
 import external.materialui.Grid
-import portrait.portrait
 import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
 import react.dom.*
-import react.router.dom.routeLink
+import external.react.router.dom.routeLink
+import pages.home.portrait.portrait
 
 class Home : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
