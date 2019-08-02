@@ -67,10 +67,28 @@ class About : RComponent<RProps, AboutState>() {
                     history(state.tabIndex == 2)
                 }
                 div("about-nav") {
-                    routeLink(to = "/") {
-                        Button {
-                            attrs { color = "default"; variant = "contained"; }
-                            +"Home"
+                    Grid {
+                        attrs { id = "home-button-group"; container = true; spacing = 16; justify = "center" }
+
+                        Grid {
+                            attrs { item = true; }
+
+                            routeLink(to = "/"){
+                                Button {
+                                    attrs { color = "default"; variant = "contained"; }
+                                    +"Home"
+                                }
+                            }
+                        }
+
+                        Grid {
+                            attrs { item = true; }
+                            routeLink(to = "/projects") {
+                                Button {
+                                    attrs { color = "primary"; variant = "contained"; }
+                                    +"My Projects"
+                                }
+                            }
                         }
                     }
                 }

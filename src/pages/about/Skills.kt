@@ -9,15 +9,11 @@ import react.*
 import react.dom.*
 import kotlin.browser.window
 
-class Skills : RComponent<RProps, SkillsState>() {
+class Skills : RComponent<RProps, RState>() {
     private val slider = createRef<Slick>()
     private var currentSlideIndex = 0
 
-    init {
-        state.openPanel = "early"
-    }
-
-    override fun componentDidUpdate(prevProps: RProps, prevState: SkillsState, snapshot: Any) {
+    override fun componentDidUpdate(prevProps: RProps, prevState: RState, snapshot: Any) {
         slider.current?.slickGoTo(currentSlideIndex)
     }
 
@@ -111,10 +107,6 @@ class Skills : RComponent<RProps, SkillsState>() {
             }
         }
     }
-}
-
-interface SkillsState : RState {
-    var openPanel: String
 }
 
 fun RBuilder.skills() = child(Skills::class) {}

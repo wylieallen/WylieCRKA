@@ -22,4 +22,5 @@ external interface GridProps : RProps{
     var lg: Int
     var xl: Int
     var className: String
+    var style: dynamic
 }

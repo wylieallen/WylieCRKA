@@ -39,6 +39,29 @@ class Values : RComponent<RProps, RState>() {
         slider.current?.slickGoTo(currentSlideIndex)
     }
 
+    private fun RBuilder.valuePillars() {
+        valuePillar(
+                title = "Quality Code",
+                tagline = "I'm playing the long game.",
+                icon = "fa-code",
+                content = "That means writing straightforward, reliable, and extensible code so today's solution won't become tomorrow's problem."
+        )
+
+        valuePillar(
+                title = "Effective Design",
+                tagline = "My apps have a lot to say.",
+                icon = "fa-calculator fa-rotate-270",
+                content = "I convey intent, possibility, and consequence through intuitive, dynamic interfaces so our users can hit the ground running."
+        )
+
+        valuePillar(
+                title = "Users First",
+                tagline = "There's more to UX than UI.",
+                icon = "fa-user",
+                content = "Thanks to rapid prototyping, powerful analytics, and direct user engagement, I'm always on top of what our stakeholders need."
+        )
+    }
+
     private fun RBuilder.valuePillar(title: String, tagline: String, icon: String, content: String) {
         div("value-pillar") {
             h3("value-pillar-title") {
@@ -52,29 +75,6 @@ class Values : RComponent<RProps, RState>() {
                 span { +content }
             }
         }
-    }
-
-    private fun RBuilder.valuePillars() {
-        valuePillar(
-                title = "Quality Code",
-                tagline = "I'm playing the long game.",
-                icon = "fa-code",
-                content = "That means writing straightforward, reliable and extensible code so today's solution won't become tomorrow's problem."
-        )
-
-        valuePillar(
-                title = "Effective Design",
-                tagline = "My apps have a lot to say.",
-                icon = "fa-calculator fa-rotate-270",
-                content = "I convey intent, possibility and consequence through intuitive, dynamic interfaces so our users can hit the ground running."
-        )
-
-        valuePillar(
-                title = "Users First",
-                tagline = "There's more to UX than UI.",
-                icon = "fa-user",
-                content = "Thanks to rapid prototyping, powerful analytics and direct user engagement, I'm always on top of what our stakeholders need."
-        )
     }
 }
 
