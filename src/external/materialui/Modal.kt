@@ -9,6 +9,8 @@ import react.RProps
 external val Modal: RClass<ModalProps>
 
 external interface ModalProps : RProps {
+    var onClose: () -> Unit
+    var onExited: () -> Unit
     var open: Boolean
 }
 

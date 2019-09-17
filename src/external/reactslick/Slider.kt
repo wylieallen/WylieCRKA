@@ -21,4 +21,5 @@ external interface SliderProps : RProps {
     var slidesToShow: Int
     var dots: Boolean
     var infinite: Boolean
+    var adaptiveHeight: Boolean
 }

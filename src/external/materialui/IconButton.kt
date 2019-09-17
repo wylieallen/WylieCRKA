@@ -10,4 +10,6 @@ external val IconButton : RClass<IconButtonProps>
 
 external interface IconButtonProps : RProps {
     var onClick: () -> Unit
+    var style: dynamic
+    var className: String
 }

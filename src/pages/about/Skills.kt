@@ -1,13 +1,15 @@
 package pages.about
 
-import external.materialui.*
-import external.materialui.icons.ExpandMore
+import external.materialui.Card
+import external.materialui.CardContent
+import external.materialui.Grid
 import external.reactslick.Slick
 import external.reactslick.Slider
-import org.w3c.dom.events.Event
 import react.*
-import react.dom.*
-import kotlin.browser.window
+import react.dom.br
+import react.dom.div
+import react.dom.h3
+import react.dom.p
 
 class Skills : RComponent<RProps, RState>() {
     private val slider = createRef<Slick>()

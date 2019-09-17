@@ -6,4 +6,8 @@ import react.RClass
 import react.RProps
 
 @JsName("default")
-external val DialogContent: RClass<RProps>
+external val DialogContent: RClass<DialogContentProps>
+
+external interface DialogContentProps : RProps {
+    var className: String
+}

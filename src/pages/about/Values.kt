@@ -14,7 +14,7 @@ class Values : RComponent<RProps, RState>() {
         div("about-values") {
             div("about-mobile-slider") {
                 Slider {
-                    attrs { centerMode = true; ref = slider; afterChange = { _, after -> currentSlideIndex = after; }; initialSlide = currentSlideIndex; arrows = false; dots = true; }
+                    attrs { centerMode = true; ref = slider; afterChange = { _, after -> currentSlideIndex = after; }; initialSlide = currentSlideIndex; arrows = false; dots = false; }
                     valuePillars()
                 }
             }

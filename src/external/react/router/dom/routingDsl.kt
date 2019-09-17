@@ -66,6 +66,8 @@ fun RBuilder.routeLink(
     to: String,
     replace: Boolean = false,
     className: String? = null,
+    target: String? = null,
+    download: Boolean = false,
     handler: RHandler<RProps>?
 ) = child(LinkComponent::class) {
     attrs {

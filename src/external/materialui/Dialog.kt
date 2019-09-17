@@ -13,5 +13,9 @@ external interface DialogProps : RProps {
     var onClose: (dynamic, String) -> Unit
     var onExited: (dynamic, String) -> Unit
     var fullScreen: Boolean
+    var className: String
+    var PaperProps: dynamic
+    var scroll: String
+    var maxWidth: String
 }
 

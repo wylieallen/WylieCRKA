@@ -1,4 +1,4 @@
-@file:JsModule("@material-ui/icons/ExpandMore")
+@file:JsModule("@material-ui/icons/Contacts")
 
 package external.materialui.icons
 
@@ -6,4 +6,4 @@ import react.RClass
 import react.RProps
 
 @JsName("default")
-external val ExpandMore: RClass<RProps>
+external val Contacts: RClass<RProps>

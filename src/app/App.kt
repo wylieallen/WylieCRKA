@@ -16,9 +16,11 @@ import kotlinext.js.requireAll
 import starfield.starfield
 import kotlin.browser.document
 
-class App : RComponent<RProps, RState>() {
+class App : RComponent<RProps, AppState>() {
     override fun RBuilder.render() {
         starfield(200)
+
+        contactDial(state.open, fun(_, _) { setState{ open = !state.open }})
 
         div("content-root") {
             CssBaseline {
@@ -28,6 +30,10 @@ class App : RComponent<RProps, RState>() {
             }
         }
     }
+}
+
+interface AppState : RState {
+    var open: Boolean
 }
 
 private fun RBuilder.routes(props: RouteResultProps<RProps>) : ReactElement {

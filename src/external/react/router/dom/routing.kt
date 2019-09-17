@@ -55,6 +55,8 @@ external interface LinkProps : RProps {
     var to: String
     var replace: Boolean
     var className: String?
+    var target: String
+    var download: Boolean
 }
 
 external interface NavLinkProps : LinkProps {

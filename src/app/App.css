@@ -30,6 +30,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #00aaff;
 }
 
 .fade-enter {
@@ -83,6 +84,14 @@ a {
 
 p span, em span, strong span, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   background-color: rgba(0, 0, 0, 0.65);
+}
+
+.slick-dots li button:before {
+  color: #e0e0e0;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white !important;
 }
 
 /*.wordy {*/

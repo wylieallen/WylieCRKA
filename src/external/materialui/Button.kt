@@ -10,5 +10,7 @@ external interface ButtonProps : RProps {
     var color: String
     var variant: String
     var href: String
+    var target: String
+    var style: dynamic
 }
 
