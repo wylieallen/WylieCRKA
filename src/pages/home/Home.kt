@@ -20,13 +20,17 @@ class Home : RComponent<RProps, RState>() {
                     h2 {
                         +"Wylie Allen"
                     }
+
                     h4 {
                         +"Full-Stack Engineer"
                     }
+
                     portrait()
+
                     p("App-intro") {
                         +"I make web apps by day and games by night."
                     }
+
                     Grid {
                         attrs { id = "home-button-group"; container = true; spacing = 16; justify = "center" }
 
@@ -49,6 +53,12 @@ class Home : RComponent<RProps, RState>() {
                                     +"My Projects"
                                 }
                             }
+                        }
+                    }
+
+                    div("privacy-policy-link") {
+                        routeLink(to = "/privacy") {
+                            + "Privacy Policy"
                         }
                     }
                 }

@@ -1,6 +1,7 @@
 package app
 
 import external.materialui.CssBaseline
+import external.react.router.dom.*
 import external.reacttransitiongroup.CSSTransition
 import external.reacttransitiongroup.TransitionGroup
 import pages.about.About
@@ -8,11 +9,8 @@ import pages.home.Home
 import pages.projects.Projects
 import react.*
 import react.dom.*
-import external.react.router.dom.RouteResultProps
-import external.react.router.dom.browserRouter
-import external.react.router.dom.route
-import external.react.router.dom.switch
 import kotlinext.js.requireAll
+import pages.privacy.Privacy
 import starfield.starfield
 import kotlin.browser.document
 
@@ -45,6 +43,7 @@ private fun RBuilder.routes(props: RouteResultProps<RProps>) : ReactElement {
                         route("/", Home::class, exact = true)
                         route("/about", About::class, exact = true)
                         route("/projects", Projects::class, exact = true)
+                        route("/privacy", Privacy::class, exact = true)
                     }
                 }
             }

@@ -1,0 +1,9 @@
+.privacy-policy {
+    max-width: 600px;
+    justify-content: center;
+}
+
+.privacy-wrapper {
+    display: flex;
+    justify-content: center;
+}

@@ -75,9 +75,9 @@ private fun RBuilder.wylagaDescription() {
     p {
         i { + "Wylaga" }
         + " is a series of top-down 2D action games inspired by arcade classics such as "
-        i { + "Centipede"}
+        a(href = "https://en.wikipedia.org/wiki/Centipede_(video_game)", target = "_blank") { + "Centipede"}
         + " and "
-        i { + "Galaga"}
+        a(href = "https://en.wikipedia.org/wiki/Galaga", target = "_blank") { + "Galaga"}
         + ". There are four distinct iterations of "
         i { + "Wylaga" }
         + ": a desktop JVM application written in Java, a browser-based implementation written in JavaScript, and a multiplatform Kotlin application that can deploy to either environment."
@@ -260,7 +260,7 @@ private fun RBuilder.seniorBackground() {
         + " for my senior project. After I brought a couple classmates, Ross Goldblum and Zachery Scribner, onto the project,"
         + " our faculty advisor, Dave, suggested we expand the project's scope accordingly by moving from 2D graphics to 3D."
         + " We evaluated a few options and settled on using "
-        i { + "JOGL" }
+        a(href = "https://en.wikipedia.org/wiki/Java_OpenGL", target = "_blank") { + "JOGL" }
         + ", a library of Java bindings for OpenGL. "
     }
 }
